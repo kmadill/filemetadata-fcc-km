@@ -1,0 +1,25 @@
+{
+  "name": "filemetadata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmadill/filemetadata-fcc-km.git"
+  },
+  "author": "Kevin Madill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmadill/filemetadata-fcc-km/issues"
+  },
+  "homepage": "https://github.com/kmadill/filemetadata-fcc-km#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
