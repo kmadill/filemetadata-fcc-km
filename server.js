@@ -16,7 +16,7 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname+'/index.html'));
 });
 
-app.post('/', multer({ dest: './uploads/' }).single('upload'), function (req, res, next) {
+app.post('/', multer({ }).single('upload'), function (req, res, next) {
   res.setHeader('Content-Type', 'application/json');
   res.send(JSON.stringify({size: req.file.size}));
 });
