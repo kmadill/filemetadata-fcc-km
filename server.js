@@ -1,19 +1,24 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
+var bodyParser = require('body-parser');
 var app = express();
 var multer  = require('multer');
 var upload = multer();
 
 var app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
+
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname+'/index.html'));
 });
 
-app.post('/profile', upload.single('avatar'), function (req, res, next) {
-  console.log(res);
+app.post('/', multer({ dest: './uploads/' }).single('upload'), function (req, res, next) {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(JSON.stringify({size: req.file.size}));
 });
 
 var port = process.env.PORT || 1337;
